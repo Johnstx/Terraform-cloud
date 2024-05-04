@@ -6,9 +6,9 @@ resource "aws_launch_template" "bastion-launch-template" {
  instance_type          = "t2.micro"
  vpc_security_group_ids = var.bastion-sg
 
- iam_instance_profile {
-   name = var.instance_profile
- }
+#  iam_instance_profile {
+#    name = var.instance_profile
+#  }
 
  key_name = var.keypair
 
@@ -45,9 +45,9 @@ resource "aws_launch_template" "nginx-launch-template" {
  instance_type          = "t2.micro"
  vpc_security_group_ids = var.nginx-sg
 
- iam_instance_profile {
-   name = var.instance_profile
- }
+#  iam_instance_profile {
+#    name = var.instance_profile
+#  }
 
  key_name =  var.keypair
 
