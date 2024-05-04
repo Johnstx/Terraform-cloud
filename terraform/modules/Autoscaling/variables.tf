@@ -15,10 +15,10 @@ variable "ami-web" {
   description = "ami for webservers"
 }
 
-variable "instance_profile" {
-  type        = string
-  description = "Instance profile for launch template"
-}
+# variable "instance_profile" {
+#   type        = string
+#   description = "Instance profile for launch template"
+# }
 
 variable "ami-bastion" {
   type        = string
