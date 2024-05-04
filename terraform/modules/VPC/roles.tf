@@ -70,7 +70,7 @@ resource "aws_iam_role_policy_attachment" "test-attach" {
 }
 
 # create an instance_profile and add iamrole to it
- resource "aws_iam_instance_profile" "ip" {
-        name = "aws_instance_profile_test"
-        role =  aws_iam_role.ec2_instance_role.name
-    }
+#  resource "aws_iam_instance_profile" "ip" {
+#         name = "aws_instance_profile_test"
+#         role =  aws_iam_role.ec2_instance_role.name
+#     }
