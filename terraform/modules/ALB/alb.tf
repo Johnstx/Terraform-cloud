@@ -158,7 +158,7 @@ resource "aws_lb_target_group" "tooling-tgt" {
 
 #   condition {
 #     host_header {
-#       values = ["tooling.wiska.store"]
+#       values = ["tooling.wiska.online"]
 #     }
 #   }
 # }

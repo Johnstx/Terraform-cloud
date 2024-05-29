@@ -1,15 +1,15 @@
 
 # The entire section creates a certificate, public zone, and validates the certificate using DNS method.
 
-# Create the certificate using a wildcard for all the domains created in wiska.store
+# Create the certificate using a wildcard for all the domains created in wiska.online
 resource "aws_acm_certificate" "wiska" {
-  domain_name       = "*.wiska.store"
+  domain_name       = "*.wiska.online"
   validation_method = "DNS"
 }
 
 # calling the hosted zone
 data "aws_route53_zone" "wiska" {
-  name         = "wiska.store"
+  name         = "wiska.online"
   private_zone = false
 }
 
@@ -39,7 +39,7 @@ resource "aws_acm_certificate_validation" "wiska" {
 # create records for tooling
 resource "aws_route53_record" "tooling" {
   zone_id = data.aws_route53_zone.wiska.zone_id
-  name    = "tooling.wiska.store"
+  name    = "tooling.wiska.online"
   type    = "A"
 
   alias {
@@ -52,7 +52,7 @@ resource "aws_route53_record" "tooling" {
 # create records for wordpress
 resource "aws_route53_record" "wordpress" {
   zone_id = data.aws_route53_zone.wiska.zone_id
-  name    = "wordpress.wiska.store"
+  name    = "wordpress.wiska.online"
   type    = "A"
 
   alias {
