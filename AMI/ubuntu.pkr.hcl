@@ -15,12 +15,12 @@ source "amazon-ebs" "terraform-ubuntu-prj-19" {
   region        = var.region
   source_ami_filter {
     filters = {
-      name                = "ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-20210928"
+      name                = "ubuntu-pro-server/images/hvm-ssd/ubuntu-xenial-16.04-amd64-pro-server-20240110"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["208491357083"]
+    owners      = ["099720109477"]
   }
   ssh_username = "ubuntu"
   tag {
