@@ -38,7 +38,9 @@ resource "aws_subnet" "private" {
   vpc_id = aws_vpc.main.id
   cidr_block = cidrsubnet(var.vpc_cidr, 4 , count.index + 4)
   map_public_ip_on_launch = false
-  availability_zone = data.aws_availability_zones.available.names[count.index]
+   # Using modulo to cycle through AZs
+  availability_zone = data.aws_availability_zones.available.names[count.index % length(data.aws_availability_zones.available.names)]
+  # availability_zone = data.aws_availability_zones.available.names[count.index]
 
   tags = merge(
     var.tags,
